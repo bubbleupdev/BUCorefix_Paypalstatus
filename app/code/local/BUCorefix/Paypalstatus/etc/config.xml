@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <BUCorefix_Paypalstatus>
+            <version>0.0.1</version>
+        </BUCorefix_Paypalstatus>
+    </modules>
+    <global>
+        <models>
+            <paypal>
+                <rewrite>
+                    <ipn>BUCorefix_Paypalstatus_Model_Ipn</ipn>
+                </rewrite>
+            </paypal>
+        </models>
+    </global>
+</config>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <BUCorefix_Paypalstatus>
+            <active>true</active>
+            <codePool>local</codePool>
+        </BUCorefix_Paypalstatus>
+    </modules>
+</config>
