@@ -13,11 +13,13 @@ class BUCorefix_Paypalstatus_Model_Ipn extends Mage_Paypal_Model_Ipn
     {
         $this->_importPaymentInformation();
 
-        // This is the fix allowing order to get the cancelled status
+        // If the order has uncanceled invoices, the call to registerCancellation() throws an exception.
+        // An exception means and the status never gets changed, and defaults to "processing".
         foreach ($this->_order->getInvoiceCollection() as $invoice) {
             $invoice->cancel()->save();
         }
 
+        // The code below is identical to the parent::_registerPaymentFailure() function.
         $this->_order
             ->registerCancellation($this->_createIpnComment(''), false)
             ->save();
